@@ -1,0 +1,37 @@
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block contenido %}
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <br> <br>
+    <form class="" action="/procesarActualizacionPedido/" method="post" enctype="multipart/form-data">
+
+      {% csrf_token %}
+
+      <input type="hidden" name="id_ag"  value="{{pedido.id_ag}}">  
+      <b>DESCRIPCIÓN:</b>
+      <textarea name="descripcion_ag" id="descripcion_ag" rows="3" class="form-control"  placeholder="INGRESE LA DESCRIPCIÓN">{{pedido.descripcion_ag}}</textarea>
+      <br>
+      <b>CANTIDAD:</b>
+      <input type="number" name="cantidad_ag" id="cantidad_ag" value="{{pedido.cantidad_ag}}" placeholder="INGRESE LA CANTIDAD" class="form-control" required>
+      <br>
+      <b>MÉTODO DE PAGO:</b>
+      <input type="text" name="metodo_pago_ag" id="metodo_pago_ag" value="{{pedido.metodo_pago_ag}}" placeholder="INGRESE EL MÉTODO DE PAGO QUE DESEA USAR" class="form-control" required>
+      <br>
+      <b>CÓDIGO:</b>
+      <input type="number" name="codigo_ag" id="codigo_ag" value="{{pedido.codigo_ag}}" placeholder="INGRESE EL CÓDIGO" class="form-control">
+      <br>
+
+      <center>
+        <button type="submit" name="button" class="btn btn-dark">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+      <center>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

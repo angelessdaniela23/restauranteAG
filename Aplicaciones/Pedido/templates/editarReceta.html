@@ -1,0 +1,37 @@
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block contenido %}
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <br> <br>
+    <form class="" action="/procesarActualizacionReceta/" method="post" enctype="multipart/form-data">
+
+      {% csrf_token %}
+
+      <input type="hidden" name="id_ag"  value="{{receta.id_ag}}">
+      <b>NOMBRE:</b>
+      <input type="text" name="nombre_ag" id="nombre_ag" value="{{receta.nombre_ag}}" placeholder="INGRESE EL NOMBRE" class="form-control" required>
+      <br>
+      <b>INSTRUCCIONES:</b>
+      <textarea name="instrucciones_ag" id="instrucciones_ag" rows="3" class="form-control" placeholder="INGRESE LAS INSTRUCCIONE">{{receta.instrucciones_ag}}</textarea>
+      <br>
+      <b>TIEMPO DE PREPARACIÓN:</b>
+      <input type="time" name="tiempo_preparacion_ag" id="tiempo_preparacion_ag" value="{{receta.tiempo_preparacion_ag}}" placeholder="INGRESE EL TIEMPO DE PREPARACION" class="form-control" required>
+      <br>
+      <b>FECHA DE CREACIÓN:</b>
+      <input type="date" name="fecha_creacion_ag" id="fecha_creacion_ag" value="{{receta.fecha_creacion_ag}}" placeholder="INGRESE LA FECHA DE CREACIÓN" class="form-control" required>
+      <br>
+
+
+      <center>
+        <button type="submit" name="button" class="btn btn-dark">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+      <center>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

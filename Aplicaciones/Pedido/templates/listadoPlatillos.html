@@ -1,0 +1,109 @@
+{# HEREDANDO HEADER Y FOOTER #}
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block contenido %}
+    <h1 class="mt-2 mx-3">PLATILLOS</h1>
+
+    <br>
+    <div class="row mt-2 mx-2">
+      <div class="col-md-5">
+        <form class="" action="/guardarPlatillo/" method="post" enctype="multipart/form-data">
+
+          {% csrf_token %}
+
+          <b>NOMBRE:</b>
+          <input type="text" name="nombre_ag" id="nombre_ag" value="" placeholder="INGRESE EL NOMBRE" class="form-control" required>
+          <br>
+          <b>CÓDIGO:</b>
+          <input type="number" name="codigo_ag" id="codigo_ag" value="" placeholder="INGRESE EL CÓDIGO DE LA PROVINCIA" class="form-control" required>
+          <br>
+          <b>CAPITAL:</b>
+          <input type="text" name="capital_ag" id="capital_ag" value="" placeholder="INGRESE LA CAPITAL" class="form-control" required>
+          <br>
+          <b>IDIOMA:</b>
+          <input type="text" name="idioma_ag" id="idioma_ag" value="" placeholder="INGRESE EL IDIOMA" class="form-control" required>
+          <br>
+
+
+          <center>
+            <button type="submit" name="button" class="btn btn-dark">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+          <center>
+
+        </form>
+
+      </div>
+      <div class="col-md-7">
+        <br>
+
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOMBRE</th>
+          <th>CÓDIGO</th>
+          <th>CAPITAL</th>
+          <th>IDIOMA</th>
+          <th>ACCIONES</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+
+          {% for provincia in provincias %}
+            <tr>
+              <td>{{provincia.id_ag}}</td>
+              <td>{{provincia.nombre_ag}}</td>
+              <td>{{provincia.codigo_ag}}</td>
+              <td>{{provincia.capital_ag}}</td>
+              <td>{{provincia.idioma_ag}}</td>
+
+
+
+            <td>
+              <a href="/editarProvincia/{{Provincia.id_ag}}" class="btn btn-dark">EDITAR</a>
+              <a href="javascript:void(0)"
+                    onclick=
+                    "eliminarProvincia('/eliminarProvincia/{{provincia.id_ag}}');"
+                    class="btn btn-danger">
+                      ELIMINAR
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+
+      </tbody>
+    </table>
+
+
+    <script type="text/javascript">
+    function eliminarProvincia(url) {
+      iziToast.question({
+          timeout: 15000,
+          close: true,
+          overlay: true,
+          displayMode: 'once',
+          id: 'question',
+          zindex: 999,
+          title: 'CONFIRMACIÓN',
+          message: '¿Está seguro de eliminar la PROVINCIA seleccionada?',
+          position: 'center',
+          buttons: [
+              ['<button><b>SI</b></button>', function (instance, toast) {
+                  instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                  window.location.href=url;
+              }, true],
+              ['<button>NO</button>', function (instance, toast) {
+
+                  instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+              }],
+          ]
+      });
+    }
+  </script>
+
+{% endblock %}

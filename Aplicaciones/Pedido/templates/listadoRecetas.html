@@ -1,0 +1,109 @@
+{# HEREDANDO HEADER Y FOOTER #}
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block contenido %}
+    <h1 class="mt-2 mx-3">RECETAS</h1>
+
+    <br>
+    <div class="row mt-2 mx-2">
+      <div class="col-md-5">
+        <form class="" action="/guardarReceta/" method="post" enctype="multipart/form-data">
+
+          {% csrf_token %}
+
+          <b>NOMBRE:</b>
+          <input type="text" name="nombre_ag" id="nombre_ag" value="" placeholder="INGRESE EL NOMBRE" class="form-control" required>
+          <br>
+          <b>INSTRUCCIONES:</b>
+          <textarea name="instrucciones_ag" id="instrucciones_ag" rows="3" class="form-control" placeholder="INGRESE LAS INSTRUCCIONE"></textarea>
+          <br>
+          <b>TIEMPO DE PREPARACIÓN:</b>
+          <input type="time" name="tiempo_preparacion_ag" id="tiempo_preparacion_ag" value="" placeholder="INGRESE EL TIEMPO DE PREPARACION" class="form-control" required>
+          <br>
+          <b>FECHA DE CREACIÓN:</b>
+          <input type="date" name="fecha_creacion_ag" id="fecha_creacion_ag" value="" placeholder="INGRESE LA FECHA DE CREACIÓN" class="form-control" required>
+          <br>
+
+
+          <center>
+            <button type="submit" name="button" class="btn btn-dark">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+          <center>
+
+        </form>
+
+      </div>
+      <div class="col-md-7">
+        <br>
+
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOMBRE</th>
+          <th>INSTRUCCIONES</th>
+          <th>TIEMPO DE PREPARACIÓN</th>
+          <th>CREACIÓN</th>
+          <th>ACCIONES</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+
+          {% for receta in recetas %}
+            <tr>
+              <td>{{receta.id_ag}}</td>
+              <td>{{receta.nombre_ag}}</td>
+              <td>{{receta.instrucciones_ag}}</td>
+              <td>{{receta.tiempo_preparacion_ag}}</td>
+              <td>{{receta.fecha_creacion_ag}}</td>
+
+
+
+            <td>
+              <a href="/editarReceta/{{Receta.id_ag}}" class="btn btn-dark">EDITAR</a>
+              <a href="javascript:void(0)"
+                    onclick=
+                    "eliminarReceta('/eliminarReceta/{{receta.id_ag}}');"
+                    class="btn btn-danger">
+                      ELIMINAR
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+
+      </tbody>
+    </table>
+
+
+    <script type="text/javascript">
+    function eliminarReceta(url) {
+      iziToast.question({
+          timeout: 15000,
+          close: true,
+          overlay: true,
+          displayMode: 'once',
+          id: 'question',
+          zindex: 999,
+          title: 'CONFIRMACIÓN',
+          message: '¿Está seguro de eliminar la RECETA seleccionada?',
+          position: 'center',
+          buttons: [
+              ['<button><b>SI</b></button>', function (instance, toast) {
+                  instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                  window.location.href=url;
+              }, true],
+              ['<button>NO</button>', function (instance, toast) {
+
+                  instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+              }],
+          ]
+      });
+    }
+  </script>
+
+{% endblock %}

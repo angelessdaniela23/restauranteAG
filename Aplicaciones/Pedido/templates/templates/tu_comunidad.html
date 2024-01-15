@@ -1,0 +1,355 @@
+{% extends "./pricipal.html" %}
+{% load static %}
+{% block contenido%}
+<div class="row">
+  <div class="col-md-3">
+    <h2 class="mt-5 mb-4 text-center"><strong>Tipo de preparación</strong></h2><br>
+    <center>
+    <button type="button" class="btn btn-outline-danger">Fresca</button>
+    </center>
+    <br>
+    <h2 class="mt-5 mb-4 text-center"><strong>Filtrar por categoría</strong></h2><br>
+    <div class="cat-list">
+    <ul class="list-group">
+        <li class="list-group-item "><a href="https://www.aki.com.ec/recetas_categories/bebidas/" class="text-secondary">Bebidas</a></li>
+        <li class="list-group-item "><a href="https://www.aki.com.ec/recetas_categories/cocteles/" class="text-secondary">Cocteles</a></li>
+        <li class="list-group-item "><a href="https://www.aki.com.ec/recetas_categories/ensaladas/" class="text-secondary">Ensaladas</a></li>
+        <li class="list-group-item "><a href="https://www.aki.com.ec/recetas_categories/entradas/" class="text-secondary">Entradas</a></li>
+        <li class="list-group-item "><a href="https://www.aki.com.ec/recetas_categories/internacional/" class="text-secondary">Internacional</a></li>
+        <li class="list-group-item "><a href="https://www.aki.com.ec/recetas_categories/plato-fuerte/" class="text-secondary">Plato fuerte</a></li>
+        <li class="list-group-item "><a href="https://www.aki.com.ec/recetas_categories/postres/" class="text-secondary">Postres</a></li>
+        <li class="list-group-item "><a href="https://www.aki.com.ec/recetas_categories/sopas-entradas/" class="text-secondary">Sopas</a></li>
+        <li class="list-group-item "><a href="https://www.aki.com.ec/recetas_categories/tentempie/" class="text-secondary">Tentempié</a></li>
+    </ul>
+</div>
+
+
+  </div>
+  <div class="col-md-9">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <!-- Suponiendo que deseas cargar 'imagen1.jpg' -->
+      <img src="https://scontent.fuio1-2.fna.fbcdn.net/v/t39.30808-6/415436161_880508330118894_2091555806530973323_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3635dc&_nc_ohc=BnLI9MQ3Ab0AX_jgpGr&_nc_ht=scontent.fuio1-2.fna&oh=00_AfCaYcoHnfELiqc_ovAwy48m7fx4OceMB0wD5OgyGU_6fA&oe=65948819" class="d-block w-100" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="https://scontent.fuio1-2.fna.fbcdn.net/v/t39.30808-6/414986229_880508326785561_7289742013801841293_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=3635dc&_nc_ohc=Kb6fW7rV5A0AX8B3RU7&_nc_ht=scontent.fuio1-2.fna&oh=00_AfCZkjomzVzooqTtT-Db2E4BkLKA7aOddCImYlBaCPaw9Q&oe=6595262E" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://scontent.fuio1-2.fna.fbcdn.net/v/t39.30808-6/415085063_880508376785556_2976563125619887756_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=3635dc&_nc_ohc=2AGhD_4PQg8AX_8i_Kv&_nc_ht=scontent.fuio1-2.fna&oh=00_AfDBAMX1xi10s9mqf7qxPlcQHE6jgwC9dudBnGKJXPRSRw&oe=6593A450" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://scontent.fuio1-2.fna.fbcdn.net/v/t39.30808-6/415495649_880508310118896_1050237395241358572_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=3635dc&_nc_ohc=6zN_31sxaA0AX-dzl_D&_nc_ht=scontent.fuio1-2.fna&oh=00_AfBG-sKwTjB_WPHNrxd7pg8wjiHs1rnJz4KyZFf4a4q8-Q&oe=659433D4" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    <div class="container">
+  <h2 class="mt-5 mb-4"><strong>Qué deseas cocinar hoy</strong></h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <img src="https://www.aki.com.ec/wp-content/uploads/2023/12/coctel_de_champan.png" class="card-img-top"
+        alt="Cóctel de champan con frambuesas">
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h4 class="card-title"><i class="bi bi-floppy"></i><a href="https://www.aki.com.ec/recetas/coctel-de-champan-con-frambuesas/">Cóctel de champan con frambuesas</a></h4>
+        <div class="row">
+            <div class="col-md-6 text-center">
+
+                  <p> <i class="bi bi-floppy"></i>Rinde para:<br /><strong>4 personas</strong></p>
+
+            </div>
+            <div class="col-md-6">
+
+                <p>Preparación:<br /><strong>5 min.</strong></p>
+            </div>
+
+          </div>
+
+
+              <div class="entry-content">
+                <p>Champán chispeante con frambuesas frescas y menta: una mezcla refrescante para brindar en momentos especiales.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="container">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <img src="https://www.aki.com.ec/wp-content/uploads/2023/12/pavo-naviden%CC%83o.png" class="card-img-top"
+          alt="Cóctel de champan con frambuesas">
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h4 class="card-title"><i class="bi bi-floppy"></i><a href="https://www.aki.com.ec/recetas/coctel-de-champan-con-frambuesas/">Cóctel de champan con frambuesas</a></h4>
+          <div class="row">
+              <div class="col-md-6 text-center">
+
+                    <p> <i class="bi bi-floppy"></i>Rinde para:<br /><strong>4 personas</strong></p>
+
+              </div>
+              <div class="col-md-6">
+
+                  <p>Preparación:<br /><strong>5 min.</strong></p>
+              </div>
+
+            </div>
+
+
+                <div class="entry-content">
+                  <p>Champán chispeante con frambuesas frescas y menta: una mezcla refrescante para brindar en momentos especiales.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="container">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <img src="https://www.aki.com.ec/wp-content/uploads/2023/12/aguacate-relleno.png" class="card-img-top"
+            alt="Cóctel de champan con frambuesas">
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h4 class="card-title"><i class="bi bi-floppy"></i><a href="https://www.aki.com.ec/recetas/coctel-de-champan-con-frambuesas/">Cóctel de champan con frambuesas</a></h4>
+            <div class="row">
+                <div class="col-md-6 text-center">
+
+                      <p> <i class="bi bi-floppy"></i>Rinde para:<br /><strong>4 personas</strong></p>
+
+                </div>
+                <div class="col-md-6">
+
+                    <p>Preparación:<br /><strong>5 min.</strong></p>
+                </div>
+
+              </div>
+
+
+                  <div class="entry-content">
+                    <p>Champán chispeante con frambuesas frescas y menta: una mezcla refrescante para brindar en momentos especiales.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="container">
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <img src="https://www.aki.com.ec/wp-content/uploads/2023/12/bun%CC%83uelos-receta.png" class="card-img-top"
+              alt="Cóctel de champan con frambuesas">
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h4 class="card-title"><i class="bi bi-floppy"></i><a href="https://www.aki.com.ec/recetas/coctel-de-champan-con-frambuesas/">Cóctel de champan con frambuesas</a></h4>
+              <div class="row">
+                  <div class="col-md-6 text-center">
+
+                        <p> <i class="bi bi-floppy"></i>Rinde para:<br /><strong>4 personas</strong></p>
+
+                  </div>
+                  <div class="col-md-6">
+
+                      <p>Preparación:<br /><strong>5 min.</strong></p>
+                  </div>
+
+                </div>
+
+
+                    <div class="entry-content">
+                      <p>Champán chispeante con frambuesas frescas y menta: una mezcla refrescante para brindar en momentos especiales.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="container">
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <img src="https://www.aki.com.ec/wp-content/uploads/2023/11/NOV.POSTO_.01-Banner.png" class="card-img-top"
+                alt="Cóctel de champan con frambuesas">
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h4 class="card-title"><i class="bi bi-floppy"></i><a href="https://www.aki.com.ec/recetas/coctel-de-champan-con-frambuesas/">Cóctel de champan con frambuesas</a></h4>
+                <div class="row">
+                    <div class="col-md-6 text-center">
+
+                          <p> <i class="bi bi-floppy"></i>Rinde para:<br /><strong>4 personas</strong></p>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <p>Preparación:<br /><strong>5 min.</strong></p>
+                    </div>
+
+                  </div>
+
+
+                      <div class="entry-content">
+                        <p>Champán chispeante con frambuesas frescas y menta: una mezcla refrescante para brindar en momentos especiales.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="container">
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card mb-4">
+                  <img src="https://www.aki.com.ec/wp-content/uploads/2023/10/TSA-Banner-2.jpeg" class="card-img-top"
+                  alt="Cóctel de champan con frambuesas">
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h4 class="card-title"><i class="bi bi-floppy"></i><a href="https://www.aki.com.ec/recetas/coctel-de-champan-con-frambuesas/">Cóctel de champan con frambuesas</a></h4>
+                  <div class="row">
+                      <div class="col-md-6 text-center">
+
+                            <p> <i class="bi bi-floppy"></i>Rinde para:<br /><strong>4 personas</strong></p>
+
+                      </div>
+                      <div class="col-md-6">
+
+                          <p>Preparación:<br /><strong>5 min.</strong></p>
+                      </div>
+
+                    </div>
+
+
+                        <div class="entry-content">
+                          <p>Champán chispeante con frambuesas frescas y menta: una mezcla refrescante para brindar en momentos especiales.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="container">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card mb-4">
+                    <img src="https://www.aki.com.ec/wp-content/uploads/2023/10/TSA-Banner-1.jpeg" class="card-img-top"
+                    alt="Cóctel de champan con frambuesas">
+
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <h4 class="card-title"><i class="bi bi-floppy"></i><a href="https://www.aki.com.ec/recetas/coctel-de-champan-con-frambuesas/">Cóctel de champan con frambuesas</a></h4>
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+
+                              <p> <i class="bi bi-floppy"></i>Rinde para:<br /><strong>4 personas</strong></p>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <p>Preparación:<br /><strong>5 min.</strong></p>
+                        </div>
+
+                      </div>
+
+
+                          <div class="entry-content">
+                            <p>Champán chispeante con frambuesas frescas y menta: una mezcla refrescante para brindar en momentos especiales.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="container">
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card mb-4">
+                      <img src="https://www.aki.com.ec/wp-content/uploads/2023/08/Pastel-de-queso-y-manzana-light-.jpg" class="card-img-top"
+                      alt="Cóctel de champan con frambuesas">
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <h4 class="card-title"><i class="bi bi-floppy"></i><a href="https://www.aki.com.ec/recetas/coctel-de-champan-con-frambuesas/">Cóctel de champan con frambuesas</a></h4>
+                      <div class="row">
+                          <div class="col-md-6 text-center">
+
+                                <p> <i class="bi bi-floppy"></i>Rinde para:<br /><strong>4 personas</strong></p>
+
+                          </div>
+                          <div class="col-md-6">
+
+                              <p>Preparación:<br /><strong>5 min.</strong></p>
+                          </div>
+
+                        </div>
+
+
+                            <div class="entry-content">
+                              <p>Champán chispeante con frambuesas frescas y menta: una mezcla refrescante para brindar en momentos especiales.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <img src="https://scontent.fuio1-2.fna.fbcdn.net/v/t39.30808-6/415102050_880511463451914_7909170452858573167_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=3635dc&_nc_ohc=QaLr2rEd2R4AX8xdbuC&_nc_ht=scontent.fuio1-2.fna&oh=00_AfAMQsSgbXBOjfhKWB9EWp8BkjcbWGcsodv56JN0qrk1Tw&oe=6594934A" alt="">
+
+                      </div>
+                    </div>
+
+
+
+
+  </div>
+</div>
+
+
+{% endblock %}

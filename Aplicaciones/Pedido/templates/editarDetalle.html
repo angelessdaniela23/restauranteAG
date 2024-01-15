@@ -1,0 +1,38 @@
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block contenido %}
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <br> <br>
+    <form class="" action="/procesarActualizacionDetalle/" method="post" enctype="multipart/form-data">
+
+      {% csrf_token %}
+
+      <input type="hidden" name="id_ag"  value="{{detalle.id_ag}}">
+      <b>FECHA:</b>
+      <input type="date" name="fecha_ag" id="fecha_ag" value="{{detalle.fecha_ag}}" placeholder="INGRESE LA FECHA" class="form-control" required>
+      <br>
+      <b>HORA:</b>
+      <input type="time" name="hora_ag" id="hora_ag" value="{{detalle.hora_ag}}" placeholder="INGRESE LA HORA" class="form-control" required>
+      <br>
+      <b>TOTAL:</b>
+      <input type="decimal" name="total_ag" id="total_ag" value="{{detalle.total_ag}}" placeholder="INGRESE EL TOTAL" class="form-control" required>
+      <br>
+      <b>NOTAS:</b>
+      <textarea name="notas_cliente" id="notas_cliente" rows="3" class="form-control" placeholder="INGRESE UNA NOTA">{{detalle.notas_cliente}}</textarea>
+      <br>
+
+
+      <center>
+        <button type="submit" name="button" class="btn btn-dark">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+      <center>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,114 @@
+{# HEREDANDO HEADER Y FOOTER #}
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block contenido %}
+    <h1 class="mt-2 mx-3">INGREDIENTES</h1>
+
+    <br>
+    <div class="row mt-2 mx-2">
+      <div class="col-md-5">
+        <form class="" action="/guardarIngrediente/" method="post" enctype="multipart/form-data">
+
+          {% csrf_token %}
+
+          <b>NOMBRE:</b>
+          <input type="text" name="nombre_ag" id="nombre_ag" value="" placeholder="INGRESE EL NOMBRE" class="form-control" required>
+          <br>
+          <b>MARCA:</b>
+          <input type="text" name="marca_ag" id="marca_ag" value="" placeholder="INGRESE LA MARCAL" class="form-control" required>
+          <br>
+          <b>STOCK:</b>
+          <input type="number" name="stock_ag" id="stock_ag" value="" placeholder="INGRESE EL STOCK" class="form-control" required>
+          <br>
+          <b>FECHA DE VENCIMIENTO:</b>
+          <input type="date" name="fecha_ven_ag" id="fecha_ven_ag" value="" placeholder="INGRESE LA FECHA DE VENCIMIENTO" class="form-control" required>
+          <br>
+          <b>INDICACIONES:</b>
+          <textarea name="indicacion_ag" id="indicacion_ag" rows="3" class="form-control"  placeholder="INGRESE LAS INDICACIONES"></textarea>
+          <br>
+
+
+          <center>
+            <button type="submit" name="button" class="btn btn-dark">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+          <center>
+
+        </form>
+
+      </div>
+      <div class="col-md-7">
+        <br>
+
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOMBRE</th>
+          <th>MARCA</th>
+          <th>STOCK</th>
+          <th>VENCIMIENTO</th>
+          <th>INDICACIONES</th>
+          <th>ACCIONES</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+
+          {% for ingrediente in ingredientes %}
+            <tr>
+              <td>{{ingrediente.id_ag}}</td>
+              <td>{{ingrediente.nombre_ag}}</td>
+              <td>{{ingrediente.marca_ag}}</td>
+              <td>{{ingrediente.stock_ag}}</td>
+              <td>{{ingrediente.fecha_ven_ag}}</td>
+              <td>{{ingrediente.indicacion_ag}}</td>
+
+
+
+            <td>
+              <a href="/editarIngrediente/{{Ingrediente.id_ag}}" class="btn btn-dark">EDITAR</a>
+              <a href="javascript:void(0)"
+                    onclick=
+                    "eliminarIngrediente('/eliminarIngrediente/{{ingrediente.id_ag}}');"
+                    class="btn btn-danger">
+                      ELIMINAR
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+
+      </tbody>
+    </table>
+
+
+    <script type="text/javascript">
+    function eliminarIngrediente(url) {
+      iziToast.question({
+          timeout: 15000,
+          close: true,
+          overlay: true,
+          displayMode: 'once',
+          id: 'question',
+          zindex: 999,
+          title: 'CONFIRMACIÓN',
+          message: '¿Está seguro de eliminar el INGREDIENTE seleccionado?',
+          position: 'center',
+          buttons: [
+              ['<button><b>SI</b></button>', function (instance, toast) {
+                  instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                  window.location.href=url;
+              }, true],
+              ['<button>NO</button>', function (instance, toast) {
+
+                  instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+              }],
+          ]
+      });
+    }
+  </script>
+
+{% endblock %}

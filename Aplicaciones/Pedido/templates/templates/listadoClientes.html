@@ -1,0 +1,82 @@
+{% extends "./plantilla.html" %}
+{% block contenido %}
+    <h1>LISTADO DE CLIENTES</h1>
+
+    <br>
+    <div class="row">
+      <div class="col-md-5">
+        <form class="" action="/guardarCliente/" method="post">
+
+          {% csrf_token %}
+
+
+          <input type="number" name="cedula" id="cedula" value="" placeholder="INGRESE EL NUMERO DE CEDULA" class="form-control" required>
+          <br>
+
+          <input type="text" name="apellido" id="apellido" value="" placeholder="INGRESE SU APELLIDO" class="form-control" required>
+          <br>
+
+          <input type="text" name="nombre" id="nombre" value="" placeholder="INGRESE SU NOMBRE" class="form-control" required>
+          <br>
+
+          <textarea name="direccion" id="direccion" rows="3" class="form-control"  placeholder="INGRESE SU DIRECCION"></textarea>
+          <br>
+
+          <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" value="" placeholder="INGRESE SU FECHA DE NACIMIENTO" class="form-control" required>
+          <br>
+
+          <input type="EmailField" name="correo" id="correo" value="" placeholder="INGRESE SU CORREO ELECTRONICO" class="form-control" required>
+          <br>
+
+
+
+
+          <center>
+            <button type="submit" name="button" class="btn btn-primary">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+          <center>
+
+        </form>
+
+      </div>
+      <div class="col-md-7">
+        <br>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>CEDULA</th>
+          <th>APELLIDO</th>
+          <th>NOMBRE</th>
+          <th>DIRECCION</th>
+          <th>FECHA DE NACIMIENTO</th>
+          <th>EMAIL</th>
+
+        </tr>
+      </thead>
+      <tbody>
+
+          {% for cliente in clientes %}
+            <tr>
+              <td>{{cliente.id}}</td>
+              <td>{{cliente.cedula}}</td>
+              <td>{{cliente.apellido}}</td>
+              <td>{{cliente.nombre}}</td>
+              <td>{{cliente.direccion}}</td>
+              <td>{{cliente.fecha_nacimiento}}</td>
+              <td>{{cliente.correo}}</td>
+
+
+
+            <td>
+              <a href="#" class="btn btn-warning">EDITAR</a>
+              <a href="eliminarCliente/{{cliente.id}}" class="btn btn-danger">ELIMINAR</a>
+            </td>
+          </tr>
+          {% endfor %}
+
+      </tbody>
+    </table>
+
+{% endblock %}

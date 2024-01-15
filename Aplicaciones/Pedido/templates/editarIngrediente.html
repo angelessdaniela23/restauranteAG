@@ -1,0 +1,41 @@
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block contenido %}
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <br> <br>
+    <form class="" action="/procesarActualizacionIngrediente/" method="post" enctype="multipart/form-data">
+
+      {% csrf_token %}
+
+      <input type="hidden" name="id_ag"  value="{{ingrediente.id_ag}}">
+      <b>NOMBRE:</b>
+      <input type="text" name="nombre_ag" id="nombre_ag" value="{{ingrediente.nombre_ag}}" placeholder="INGRESE EL NOMBRE" class="form-control" required>
+      <br>
+      <b>MARCA:</b>
+      <input type="text" name="marca_ag" id="marca_ag" value="{{ingrediente.marca_ag}}" placeholder="INGRESE LA MARCAL" class="form-control" required>
+      <br>
+      <b>STOCK:</b>
+      <input type="number" name="stock_ag" id="stock_ag" value="{{ingrediente.stock_ag}}" placeholder="INGRESE EL STOCK" class="form-control" required>
+      <br>
+      <b>FECHA DE VENCIMIENTO:</b>
+      <input type="date" name="fecha_ven_ag" id="fecha_ven_ag" value="{{ingrediente.fecha_ven_ag}}" placeholder="INGRESE LA FECHA DE VENCIMIENTO" class="form-control" required>
+      <br>
+      <b>INDICACIONES:</b>
+      <textarea name="indicacion_ag" id="indicacion_ag" rows="3" class="form-control"  placeholder="INGRESE LAS INDICACIONES">{{ingrediente.indicacion_ag}}</textarea>
+      <br>
+
+
+      <center>
+        <button type="submit" name="button" class="btn btn-dark">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+      <center>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

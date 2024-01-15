@@ -1,0 +1,34 @@
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block contenido %}
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <br> <br>
+    <form class="" action="/procesarActualizacionTipo/" method="post" enctype="multipart/form-data">
+
+      {% csrf_token %}
+
+      <input type="hidden" name="id_ag"  value="{{tipo.id_ag}}">
+      <b>NOMBRE:</b>
+      <input type="text" name="nombre_ag" id="nombre_ag" value="{{tipo.nombre_ag}}" placeholder="INGRESE EL NOMBRE" class="form-control" required>
+      <br>
+      <b>CATEGORÍA:</b>
+      <input type="text" name="categoria_ag" id="categoria_ag" value="{{tipo.categoria_ag}}" placeholder="INGRESE LA CATEGORÍA" class="form-control" required>
+      <br>
+      <b>DESCRIPCIÓN:</b>
+      <textarea name="descripcion_ag" id="descripcion_ag" rows="3" class="form-control"  placeholder="INGRESE LA DESCRIPCIÓN">{{tipo.descripcion_ag}}</textarea>
+      <br>
+
+
+      <center>
+        <button type="submit" name="button" class="btn btn-dark">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+      <center>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

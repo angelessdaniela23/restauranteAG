@@ -1,0 +1,37 @@
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block contenido %}
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <br> <br>
+    <form class="" action="/procesarActualizacionProvincia/" method="post" enctype="multipart/form-data">
+
+      {% csrf_token %}
+
+      <input type="hidden" name="id_ag"  value="{{provincia.id_ag}}">
+      <b>NOMBRE:</b>
+      <input type="text" name="nombre_ag" id="nombre_ag" value="{{provincia.nombre_ag}}" placeholder="INGRESE EL NOMBRE" class="form-control" required>
+      <br>
+      <b>CÓDIGO:</b>
+      <input type="number" name="codigo_ag" id="codigo_ag" value="{{provincia.codigo_ag}}" placeholder="INGRESE EL CÓDIGO DE LA PROVINCIA" class="form-control" required>
+      <br>
+      <b>CAPITAL:</b>
+      <input type="text" name="capital_ag" id="capital_ag" value="{{provincia.capital_ag}}" placeholder="INGRESE LA CAPITAL" class="form-control" required>
+      <br>
+      <b>IDIOMA:</b>
+      <input type="text" name="idioma_ag" id="idioma_ag" value="{{provincia.idioma_ag}}" placeholder="INGRESE EL IDIOMA" class="form-control" required>
+      <br>
+
+
+      <center>
+        <button type="submit" name="button" class="btn btn-dark">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+      <center>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

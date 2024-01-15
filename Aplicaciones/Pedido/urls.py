@@ -1,0 +1,47 @@
+from django.urls import path
+from . import views
+
+urlpatterns=[
+    path('', views.listadoProvincias, name='listadoProvincias'),
+    path('guardarProvincia/',views.guardarProvincia),
+    path('eliminarProvincia/<id_ag>',views.eliminarProvincia),
+    path('editarProvincia/<id_ag>',views.editarProvincia),
+    path('procesarActualizacionProvincia/',views.procesarActualizacionProvincia),
+    path('listadoTipos/',views.listadoTipos),
+    path('guardarTipo/',views.guardarTipo),
+    path('eliminarTipo/<id_ag>',views.eliminarTipo),
+    path('editarTipo/<id_ag>',views.editarTipo),
+    path('procesarActualizacionTipo/',views.procesarActualizacionTipo),
+    path('listadoIngredientes/',views.listadoIngredientes),
+    path('guardarIngrediente/',views.guardarIngrediente),
+    path('eliminarIngrediente/<id_ag>',views.eliminarIngrediente),
+    path('editarIngrediente/<id_ag>',views.editarIngrediente),
+    path('procesarActualizacionIngrediente/',views.procesarActualizacionIngrediente),
+    path('listadoPedidos/',views.listadoPedidos),
+    path('guardarPedido/',views.guardarPedido),
+    path('eliminarPedido/<id_ag>',views.eliminarPedido),
+    path('editarPedido/<id_ag>',views.editarPedido),
+    path('procesarActualizacionPedido/',views.procesarActualizacionPedido),
+    path('listadoPlatillos/',views.listadoPlatillos),
+    path('guardarPlatillo/',views.guardarPlatillo),
+    path('eliminarPlatillo/<id_ag>',views.eliminarPlatillo),
+    path('editarPlatillo/<id_ag>',views.editarPlatillo),
+    path('procesarActualizacionPlatillo/',views.procesarActualizacionPlatillo),
+    path('listadoDetalles/',views.listadoDetalles),
+    path('guardarDetalle/',views.guardarDetalle),
+    path('eliminarDetalle/<id_ag>',views.eliminarDetalle),
+    path('editarDetalle/<id_ag>',views.editarDetalle),
+    path('procesarActualizacionDetalle/',views.procesarActualizacionDetalle),
+    path('listadoRecetas/',views.listadoRecetas),
+    path('guardarReceta/',views.guardarReceta),
+    path('eliminarReceta/<id_ag>',views.eliminarReceta),
+    path('editarReceta/<id_ag>',views.editarReceta),
+    path('procesarActualizacionReceta/',views.procesarActualizacionReceta),
+    path('listadoClientes/',views.listadoClientes),
+    path('guardarCliente/',views.guardarCliente),
+    path('eliminarCliente/<id_ag>',views.eliminarCliente),
+    path('editarCliente/<id_ag>',views.editarCliente),
+    path('procesarActualizacionCliente/',views.procesarActualizacionCliente)
+
+
+]

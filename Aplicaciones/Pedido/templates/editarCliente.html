@@ -1,0 +1,38 @@
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block contenido %}
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+
+    <br> <br>
+    <form class="" action="/guardarCliente/" method="post" enctype="multipart/form-data">
+
+      {% csrf_token %}
+
+      <input type="hidden" name="id_ag"  value="{{cliente.id_ag}}">
+      <b>NOMBRE:</b>
+      <input type="text" name="nombre_ag" id="nombre_ag" value="{{cliente.nombre_ag}}" placeholder="INGRESE EL NOMBRE" class="form-control" required>
+      <br>
+      <b>APELLIDO:</b>
+      <input type="text" name="apellido_ag" id="apellido_ag" value="{{cliente.apellido_ag}}" placeholder="INGRESE EL APELLIDO" class="form-control" required>
+      <br>
+      <b>NUMERO:</b>
+      <input type="IntegerField" name="numero_ag" id="numero_ag" value="{{cliente.numero_ag}}" placeholder="INGRESE EL NUMERO" class="form-control" required>
+      <br>
+      <b>EMAIL:</b>
+      <input type="EmailField" name="email_ag" id="email_ag" value="{{cliente.email_ag}}" placeholder="INGRESE EL EMAIL" class="form-control" required>
+      <br>
+
+
+      <center>
+        <button type="submit" name="button" class="btn btn-dark">&nbsp;&nbsp;&nbsp;GUARDAR&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" name="button" class="btn btn-danger">CANCELAR</button>
+      <center>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
